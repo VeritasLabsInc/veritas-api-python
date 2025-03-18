@@ -15,12 +15,9 @@ The REST API documentation can be found on [docs.veritas-api.com](https://docs.v
 ## Installation
 
 ```sh
-# install from the production repo
-pip install git+ssh://git@github.com/VeritasLabsInc/veritas-api-python.git
+# install from PyPI
+pip install --pre veritas_api
 ```
-
-> [!NOTE]
-> Once this package is [published to PyPI](https://app.stainless.com/docs/guides/publish), this will become: `pip install --pre veritas_api`
 
 ## Usage
 
