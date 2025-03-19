@@ -5,10 +5,34 @@ from typing_extensions import Literal
 
 from .._models import BaseModel
 
-__all__ = ["EnrichmentRetrieveStatusResponse", "Candidate"]
+__all__ = ["EnrichmentRetrieveStatusResponse", "Candidate", "CandidateEducationHistory", "CandidateWorkHistory"]
+
+
+class CandidateEducationHistory(BaseModel):
+    degree: Optional[str] = None
+
+    end_date: Optional[str] = None
+
+    name: Optional[str] = None
+    """Name of the school including location"""
+
+    start_date: Optional[str] = None
+
+
+class CandidateWorkHistory(BaseModel):
+    end_date: Optional[str] = None
+
+    name: Optional[str] = None
+    """Name of the company including location"""
+
+    role: Optional[str] = None
+
+    start_date: Optional[str] = None
 
 
 class Candidate(BaseModel):
+    education_history: Optional[List[CandidateEducationHistory]] = None
+
     email: Optional[str] = None
 
     linkedin_id: Optional[str] = None
@@ -22,6 +46,8 @@ class Candidate(BaseModel):
     role: Optional[Literal["rn", "lpn", "cna", "allied_health", "other"]] = None
 
     specialty: Optional[str] = None
+
+    work_history: Optional[List[CandidateWorkHistory]] = None
 
 
 class EnrichmentRetrieveStatusResponse(BaseModel):
