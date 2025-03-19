@@ -747,7 +747,30 @@ class TestVeritasAPI:
         with pytest.raises(APITimeoutError):
             self.client.post(
                 "/v1/enrichments",
-                body=cast(object, maybe_transform(dict(candidates=[{"name": "name"}]), EnrichmentCreateBulkParams)),
+                body=cast(
+                    object,
+                    maybe_transform(
+                        dict(
+                            candidates=[
+                                {
+                                    "name": "John Doe",
+                                    "linkedin_id": "john-doe",
+                                },
+                                {
+                                    "name": "Jane Doe",
+                                    "email": "jane@doe.com",
+                                },
+                                {
+                                    "name": "Miles Tone",
+                                    "phone": "123456790",
+                                    "email": "miles@tone.com",
+                                    "role": "rn",
+                                },
+                            ]
+                        ),
+                        EnrichmentCreateBulkParams,
+                    ),
+                ),
                 cast_to=httpx.Response,
                 options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
             )
@@ -762,7 +785,30 @@ class TestVeritasAPI:
         with pytest.raises(APIStatusError):
             self.client.post(
                 "/v1/enrichments",
-                body=cast(object, maybe_transform(dict(candidates=[{"name": "name"}]), EnrichmentCreateBulkParams)),
+                body=cast(
+                    object,
+                    maybe_transform(
+                        dict(
+                            candidates=[
+                                {
+                                    "name": "John Doe",
+                                    "linkedin_id": "john-doe",
+                                },
+                                {
+                                    "name": "Jane Doe",
+                                    "email": "jane@doe.com",
+                                },
+                                {
+                                    "name": "Miles Tone",
+                                    "phone": "123456790",
+                                    "email": "miles@tone.com",
+                                    "role": "rn",
+                                },
+                            ]
+                        ),
+                        EnrichmentCreateBulkParams,
+                    ),
+                ),
                 cast_to=httpx.Response,
                 options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
             )
@@ -1545,7 +1591,30 @@ class TestAsyncVeritasAPI:
         with pytest.raises(APITimeoutError):
             await self.client.post(
                 "/v1/enrichments",
-                body=cast(object, maybe_transform(dict(candidates=[{"name": "name"}]), EnrichmentCreateBulkParams)),
+                body=cast(
+                    object,
+                    maybe_transform(
+                        dict(
+                            candidates=[
+                                {
+                                    "name": "John Doe",
+                                    "linkedin_id": "john-doe",
+                                },
+                                {
+                                    "name": "Jane Doe",
+                                    "email": "jane@doe.com",
+                                },
+                                {
+                                    "name": "Miles Tone",
+                                    "phone": "123456790",
+                                    "email": "miles@tone.com",
+                                    "role": "rn",
+                                },
+                            ]
+                        ),
+                        EnrichmentCreateBulkParams,
+                    ),
+                ),
                 cast_to=httpx.Response,
                 options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
             )
@@ -1560,7 +1629,30 @@ class TestAsyncVeritasAPI:
         with pytest.raises(APIStatusError):
             await self.client.post(
                 "/v1/enrichments",
-                body=cast(object, maybe_transform(dict(candidates=[{"name": "name"}]), EnrichmentCreateBulkParams)),
+                body=cast(
+                    object,
+                    maybe_transform(
+                        dict(
+                            candidates=[
+                                {
+                                    "name": "John Doe",
+                                    "linkedin_id": "john-doe",
+                                },
+                                {
+                                    "name": "Jane Doe",
+                                    "email": "jane@doe.com",
+                                },
+                                {
+                                    "name": "Miles Tone",
+                                    "phone": "123456790",
+                                    "email": "miles@tone.com",
+                                    "role": "rn",
+                                },
+                            ]
+                        ),
+                        EnrichmentCreateBulkParams,
+                    ),
+                ),
                 cast_to=httpx.Response,
                 options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
             )
