@@ -16,7 +16,7 @@ The REST API documentation can be found on [laz.veritaslabs.ai](https://laz.veri
 
 ```sh
 # install from PyPI
-pip install --pre veritas_api
+pip install veritas_api
 ```
 
 ## Usage
