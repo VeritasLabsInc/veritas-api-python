@@ -753,9 +753,19 @@ class TestVeritasAPI:
                         dict(
                             candidates=[
                                 {
-                                    "name": "dsa",
-                                    "phone": "dsadsa",
-                                }
+                                    "name": "John Doe",
+                                    "linkedin_id": "john-doe",
+                                },
+                                {
+                                    "name": "Jane Doe",
+                                    "email": "jane@doe.com",
+                                },
+                                {
+                                    "name": "Miles Tone",
+                                    "phone": "123456790",
+                                    "email": "miles@tone.com",
+                                    "role": "rn",
+                                },
                             ]
                         ),
                         EnrichmentCreateBulkParams,
@@ -781,9 +791,19 @@ class TestVeritasAPI:
                         dict(
                             candidates=[
                                 {
-                                    "name": "dsa",
-                                    "phone": "dsadsa",
-                                }
+                                    "name": "John Doe",
+                                    "linkedin_id": "john-doe",
+                                },
+                                {
+                                    "name": "Jane Doe",
+                                    "email": "jane@doe.com",
+                                },
+                                {
+                                    "name": "Miles Tone",
+                                    "phone": "123456790",
+                                    "email": "miles@tone.com",
+                                    "role": "rn",
+                                },
                             ]
                         ),
                         EnrichmentCreateBulkParams,
@@ -1577,9 +1597,19 @@ class TestAsyncVeritasAPI:
                         dict(
                             candidates=[
                                 {
-                                    "name": "dsa",
-                                    "phone": "dsadsa",
-                                }
+                                    "name": "John Doe",
+                                    "linkedin_id": "john-doe",
+                                },
+                                {
+                                    "name": "Jane Doe",
+                                    "email": "jane@doe.com",
+                                },
+                                {
+                                    "name": "Miles Tone",
+                                    "phone": "123456790",
+                                    "email": "miles@tone.com",
+                                    "role": "rn",
+                                },
                             ]
                         ),
                         EnrichmentCreateBulkParams,
@@ -1605,9 +1635,19 @@ class TestAsyncVeritasAPI:
                         dict(
                             candidates=[
                                 {
-                                    "name": "dsa",
-                                    "phone": "dsadsa",
-                                }
+                                    "name": "John Doe",
+                                    "linkedin_id": "john-doe",
+                                },
+                                {
+                                    "name": "Jane Doe",
+                                    "email": "jane@doe.com",
+                                },
+                                {
+                                    "name": "Miles Tone",
+                                    "phone": "123456790",
+                                    "email": "miles@tone.com",
+                                    "role": "rn",
+                                },
                             ]
                         ),
                         EnrichmentCreateBulkParams,

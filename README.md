@@ -34,7 +34,22 @@ client = VeritasAPI(
 )
 
 response = client.enrichments.create_bulk(
-    candidates=[{"name": "name"}],
+    candidates=[
+        {
+            "name": "John Doe",
+            "linkedin_id": "john-doe",
+        },
+        {
+            "name": "Jane Doe",
+            "email": "jane@doe.com",
+        },
+        {
+            "name": "Miles Tone",
+            "phone": "123456790",
+            "email": "miles@tone.com",
+            "role": "rn",
+        },
+    ],
 )
 print(response.id)
 ```
@@ -62,7 +77,22 @@ client = AsyncVeritasAPI(
 
 async def main() -> None:
     response = await client.enrichments.create_bulk(
-        candidates=[{"name": "name"}],
+        candidates=[
+            {
+                "name": "John Doe",
+                "linkedin_id": "john-doe",
+            },
+            {
+                "name": "Jane Doe",
+                "email": "jane@doe.com",
+            },
+            {
+                "name": "Miles Tone",
+                "phone": "123456790",
+                "email": "miles@tone.com",
+                "role": "rn",
+            },
+        ],
     )
     print(response.id)
 
@@ -100,9 +130,19 @@ try:
     client.enrichments.create_bulk(
         candidates=[
             {
-                "name": "dsa",
-                "phone": "dsadsa",
-            }
+                "name": "John Doe",
+                "linkedin_id": "john-doe",
+            },
+            {
+                "name": "Jane Doe",
+                "email": "jane@doe.com",
+            },
+            {
+                "name": "Miles Tone",
+                "phone": "123456790",
+                "email": "miles@tone.com",
+                "role": "rn",
+            },
         ],
     )
 except veritas_api.APIConnectionError as e:
@@ -150,9 +190,19 @@ client = VeritasAPI(
 client.with_options(max_retries=5).enrichments.create_bulk(
     candidates=[
         {
-            "name": "dsa",
-            "phone": "dsadsa",
-        }
+            "name": "John Doe",
+            "linkedin_id": "john-doe",
+        },
+        {
+            "name": "Jane Doe",
+            "email": "jane@doe.com",
+        },
+        {
+            "name": "Miles Tone",
+            "phone": "123456790",
+            "email": "miles@tone.com",
+            "role": "rn",
+        },
     ],
 )
 ```
@@ -180,9 +230,19 @@ client = VeritasAPI(
 client.with_options(timeout=5.0).enrichments.create_bulk(
     candidates=[
         {
-            "name": "dsa",
-            "phone": "dsadsa",
-        }
+            "name": "John Doe",
+            "linkedin_id": "john-doe",
+        },
+        {
+            "name": "Jane Doe",
+            "email": "jane@doe.com",
+        },
+        {
+            "name": "Miles Tone",
+            "phone": "123456790",
+            "email": "miles@tone.com",
+            "role": "rn",
+        },
     ],
 )
 ```
@@ -227,8 +287,16 @@ from veritas_api import VeritasAPI
 client = VeritasAPI()
 response = client.enrichments.with_raw_response.create_bulk(
     candidates=[{
-        "name": "dsa",
-        "phone": "dsadsa",
+        "name": "John Doe",
+        "linkedin_id": "john-doe",
+    }, {
+        "name": "Jane Doe",
+        "email": "jane@doe.com",
+    }, {
+        "name": "Miles Tone",
+        "phone": "123456790",
+        "email": "miles@tone.com",
+        "role": "rn",
     }],
 )
 print(response.headers.get('X-My-Header'))
@@ -251,9 +319,19 @@ To stream the response body, use `.with_streaming_response` instead, which requi
 with client.enrichments.with_streaming_response.create_bulk(
     candidates=[
         {
-            "name": "dsa",
-            "phone": "dsadsa",
-        }
+            "name": "John Doe",
+            "linkedin_id": "john-doe",
+        },
+        {
+            "name": "Jane Doe",
+            "email": "jane@doe.com",
+        },
+        {
+            "name": "Miles Tone",
+            "phone": "123456790",
+            "email": "miles@tone.com",
+            "role": "rn",
+        },
     ],
 ) as response:
     print(response.headers.get("X-My-Header"))
