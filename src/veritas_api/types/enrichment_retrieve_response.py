@@ -5,7 +5,7 @@ from typing_extensions import Literal
 
 from .._models import BaseModel
 
-__all__ = ["EnrichmentRetrieveStatusResponse", "Candidate", "CandidateEducationHistory", "CandidateWorkHistory"]
+__all__ = ["EnrichmentRetrieveResponse", "Candidate", "CandidateEducationHistory", "CandidateWorkHistory"]
 
 
 class CandidateEducationHistory(BaseModel):
@@ -50,7 +50,7 @@ class Candidate(BaseModel):
     work_history: Optional[List[CandidateWorkHistory]] = None
 
 
-class EnrichmentRetrieveStatusResponse(BaseModel):
+class EnrichmentRetrieveResponse(BaseModel):
     id: Optional[str] = None
 
     candidates: Optional[List[Candidate]] = None

@@ -21,8 +21,8 @@ from .._response import (
     async_to_streamed_response_wrapper,
 )
 from .._base_client import make_request_options
+from ..types.enrichment_retrieve_response import EnrichmentRetrieveResponse
 from ..types.enrichment_create_bulk_response import EnrichmentCreateBulkResponse
-from ..types.enrichment_retrieve_status_response import EnrichmentRetrieveStatusResponse
 
 __all__ = ["EnrichmentsResource", "AsyncEnrichmentsResource"]
 
@@ -46,6 +46,39 @@ class EnrichmentsResource(SyncAPIResource):
         For more information, see https://www.github.com/VeritasLabsInc/veritas-api-python#with_streaming_response
         """
         return EnrichmentsResourceWithStreamingResponse(self)
+
+    def retrieve(
+        self,
+        id: str,
+        *,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+    ) -> EnrichmentRetrieveResponse:
+        """
+        Get enrichment status and results
+
+        Args:
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        if not id:
+            raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
+        return self._get(
+            f"/v1/enrichments/{id}",
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=EnrichmentRetrieveResponse,
+        )
 
     def create_bulk(
         self,
@@ -79,39 +112,6 @@ class EnrichmentsResource(SyncAPIResource):
             cast_to=EnrichmentCreateBulkResponse,
         )
 
-    def retrieve_status(
-        self,
-        id: str,
-        *,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> EnrichmentRetrieveStatusResponse:
-        """
-        Get enrichment status and results
-
-        Args:
-          extra_headers: Send extra headers
-
-          extra_query: Add additional query parameters to the request
-
-          extra_body: Add additional JSON properties to the request
-
-          timeout: Override the client-level default timeout for this request, in seconds
-        """
-        if not id:
-            raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
-        return self._get(
-            f"/v1/enrichments/{id}",
-            options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
-            ),
-            cast_to=EnrichmentRetrieveStatusResponse,
-        )
-
 
 class AsyncEnrichmentsResource(AsyncAPIResource):
     @cached_property
@@ -132,6 +132,39 @@ class AsyncEnrichmentsResource(AsyncAPIResource):
         For more information, see https://www.github.com/VeritasLabsInc/veritas-api-python#with_streaming_response
         """
         return AsyncEnrichmentsResourceWithStreamingResponse(self)
+
+    async def retrieve(
+        self,
+        id: str,
+        *,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+    ) -> EnrichmentRetrieveResponse:
+        """
+        Get enrichment status and results
+
+        Args:
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        if not id:
+            raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
+        return await self._get(
+            f"/v1/enrichments/{id}",
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=EnrichmentRetrieveResponse,
+        )
 
     async def create_bulk(
         self,
@@ -167,49 +200,16 @@ class AsyncEnrichmentsResource(AsyncAPIResource):
             cast_to=EnrichmentCreateBulkResponse,
         )
 
-    async def retrieve_status(
-        self,
-        id: str,
-        *,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> EnrichmentRetrieveStatusResponse:
-        """
-        Get enrichment status and results
-
-        Args:
-          extra_headers: Send extra headers
-
-          extra_query: Add additional query parameters to the request
-
-          extra_body: Add additional JSON properties to the request
-
-          timeout: Override the client-level default timeout for this request, in seconds
-        """
-        if not id:
-            raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
-        return await self._get(
-            f"/v1/enrichments/{id}",
-            options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
-            ),
-            cast_to=EnrichmentRetrieveStatusResponse,
-        )
-
 
 class EnrichmentsResourceWithRawResponse:
     def __init__(self, enrichments: EnrichmentsResource) -> None:
         self._enrichments = enrichments
 
+        self.retrieve = to_raw_response_wrapper(
+            enrichments.retrieve,
+        )
         self.create_bulk = to_raw_response_wrapper(
             enrichments.create_bulk,
-        )
-        self.retrieve_status = to_raw_response_wrapper(
-            enrichments.retrieve_status,
         )
 
 
@@ -217,11 +217,11 @@ class AsyncEnrichmentsResourceWithRawResponse:
     def __init__(self, enrichments: AsyncEnrichmentsResource) -> None:
         self._enrichments = enrichments
 
+        self.retrieve = async_to_raw_response_wrapper(
+            enrichments.retrieve,
+        )
         self.create_bulk = async_to_raw_response_wrapper(
             enrichments.create_bulk,
-        )
-        self.retrieve_status = async_to_raw_response_wrapper(
-            enrichments.retrieve_status,
         )
 
 
@@ -229,11 +229,11 @@ class EnrichmentsResourceWithStreamingResponse:
     def __init__(self, enrichments: EnrichmentsResource) -> None:
         self._enrichments = enrichments
 
+        self.retrieve = to_streamed_response_wrapper(
+            enrichments.retrieve,
+        )
         self.create_bulk = to_streamed_response_wrapper(
             enrichments.create_bulk,
-        )
-        self.retrieve_status = to_streamed_response_wrapper(
-            enrichments.retrieve_status,
         )
 
 
@@ -241,9 +241,9 @@ class AsyncEnrichmentsResourceWithStreamingResponse:
     def __init__(self, enrichments: AsyncEnrichmentsResource) -> None:
         self._enrichments = enrichments
 
+        self.retrieve = async_to_streamed_response_wrapper(
+            enrichments.retrieve,
+        )
         self.create_bulk = async_to_streamed_response_wrapper(
             enrichments.create_bulk,
-        )
-        self.retrieve_status = async_to_streamed_response_wrapper(
-            enrichments.retrieve_status,
         )

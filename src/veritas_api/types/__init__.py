@@ -2,6 +2,6 @@
 
 from __future__ import annotations
 
+from .enrichment_retrieve_response import EnrichmentRetrieveResponse as EnrichmentRetrieveResponse
 from .enrichment_create_bulk_params import EnrichmentCreateBulkParams as EnrichmentCreateBulkParams
 from .enrichment_create_bulk_response import EnrichmentCreateBulkResponse as EnrichmentCreateBulkResponse
-from .enrichment_retrieve_status_response import EnrichmentRetrieveStatusResponse as EnrichmentRetrieveStatusResponse

@@ -10,7 +10,7 @@ It is generated with [Stainless](https://www.stainless.com/).
 
 ## Documentation
 
-The REST API documentation can be found on [docs.veritas-api.com](https://docs.veritas-api.com). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found on [laz.veritaslabs.ai](https://laz.veritaslabs.ai/api/docs). The full API of this library can be found in [api.md](api.md).
 
 ## Installation
 
@@ -98,7 +98,12 @@ client = VeritasAPI()
 
 try:
     client.enrichments.create_bulk(
-        candidates=[{"name": "name"}],
+        candidates=[
+            {
+                "name": "dsa",
+                "phone": "dsadsa",
+            }
+        ],
     )
 except veritas_api.APIConnectionError as e:
     print("The server could not be reached")
@@ -143,7 +148,12 @@ client = VeritasAPI(
 
 # Or, configure per-request:
 client.with_options(max_retries=5).enrichments.create_bulk(
-    candidates=[{"name": "name"}],
+    candidates=[
+        {
+            "name": "dsa",
+            "phone": "dsadsa",
+        }
+    ],
 )
 ```
 
@@ -168,7 +178,12 @@ client = VeritasAPI(
 
 # Override per-request:
 client.with_options(timeout=5.0).enrichments.create_bulk(
-    candidates=[{"name": "name"}],
+    candidates=[
+        {
+            "name": "dsa",
+            "phone": "dsadsa",
+        }
+    ],
 )
 ```
 
@@ -212,7 +227,8 @@ from veritas_api import VeritasAPI
 client = VeritasAPI()
 response = client.enrichments.with_raw_response.create_bulk(
     candidates=[{
-        "name": "name"
+        "name": "dsa",
+        "phone": "dsadsa",
     }],
 )
 print(response.headers.get('X-My-Header'))
@@ -233,7 +249,12 @@ To stream the response body, use `.with_streaming_response` instead, which requi
 
 ```python
 with client.enrichments.with_streaming_response.create_bulk(
-    candidates=[{"name": "name"}],
+    candidates=[
+        {
+            "name": "dsa",
+            "phone": "dsadsa",
+        }
+    ],
 ) as response:
     print(response.headers.get("X-My-Header"))
 
