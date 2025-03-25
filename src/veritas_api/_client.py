@@ -24,7 +24,7 @@ from ._utils import (
     get_async_library,
 )
 from ._version import __version__
-from .resources import enrichments
+from .resources import enrichments, external_document_processing
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import APIStatusError, VeritasAPIError
 from ._base_client import (
@@ -47,6 +47,7 @@ __all__ = [
 
 class VeritasAPI(SyncAPIClient):
     enrichments: enrichments.EnrichmentsResource
+    external_document_processing: external_document_processing.ExternalDocumentProcessingResource
     with_raw_response: VeritasAPIWithRawResponse
     with_streaming_response: VeritasAPIWithStreamedResponse
 
@@ -105,6 +106,7 @@ class VeritasAPI(SyncAPIClient):
         )
 
         self.enrichments = enrichments.EnrichmentsResource(self)
+        self.external_document_processing = external_document_processing.ExternalDocumentProcessingResource(self)
         self.with_raw_response = VeritasAPIWithRawResponse(self)
         self.with_streaming_response = VeritasAPIWithStreamedResponse(self)
 
@@ -215,6 +217,7 @@ class VeritasAPI(SyncAPIClient):
 
 class AsyncVeritasAPI(AsyncAPIClient):
     enrichments: enrichments.AsyncEnrichmentsResource
+    external_document_processing: external_document_processing.AsyncExternalDocumentProcessingResource
     with_raw_response: AsyncVeritasAPIWithRawResponse
     with_streaming_response: AsyncVeritasAPIWithStreamedResponse
 
@@ -273,6 +276,7 @@ class AsyncVeritasAPI(AsyncAPIClient):
         )
 
         self.enrichments = enrichments.AsyncEnrichmentsResource(self)
+        self.external_document_processing = external_document_processing.AsyncExternalDocumentProcessingResource(self)
         self.with_raw_response = AsyncVeritasAPIWithRawResponse(self)
         self.with_streaming_response = AsyncVeritasAPIWithStreamedResponse(self)
 
@@ -384,21 +388,41 @@ class AsyncVeritasAPI(AsyncAPIClient):
 class VeritasAPIWithRawResponse:
     def __init__(self, client: VeritasAPI) -> None:
         self.enrichments = enrichments.EnrichmentsResourceWithRawResponse(client.enrichments)
+        self.external_document_processing = (
+            external_document_processing.ExternalDocumentProcessingResourceWithRawResponse(
+                client.external_document_processing
+            )
+        )
 
 
 class AsyncVeritasAPIWithRawResponse:
     def __init__(self, client: AsyncVeritasAPI) -> None:
         self.enrichments = enrichments.AsyncEnrichmentsResourceWithRawResponse(client.enrichments)
+        self.external_document_processing = (
+            external_document_processing.AsyncExternalDocumentProcessingResourceWithRawResponse(
+                client.external_document_processing
+            )
+        )
 
 
 class VeritasAPIWithStreamedResponse:
     def __init__(self, client: VeritasAPI) -> None:
         self.enrichments = enrichments.EnrichmentsResourceWithStreamingResponse(client.enrichments)
+        self.external_document_processing = (
+            external_document_processing.ExternalDocumentProcessingResourceWithStreamingResponse(
+                client.external_document_processing
+            )
+        )
 
 
 class AsyncVeritasAPIWithStreamedResponse:
     def __init__(self, client: AsyncVeritasAPI) -> None:
         self.enrichments = enrichments.AsyncEnrichmentsResourceWithStreamingResponse(client.enrichments)
+        self.external_document_processing = (
+            external_document_processing.AsyncExternalDocumentProcessingResourceWithStreamingResponse(
+                client.external_document_processing
+            )
+        )
 
 
 Client = VeritasAPI

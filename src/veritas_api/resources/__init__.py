@@ -8,6 +8,14 @@ from .enrichments import (
     EnrichmentsResourceWithStreamingResponse,
     AsyncEnrichmentsResourceWithStreamingResponse,
 )
+from .external_document_processing import (
+    ExternalDocumentProcessingResource,
+    AsyncExternalDocumentProcessingResource,
+    ExternalDocumentProcessingResourceWithRawResponse,
+    AsyncExternalDocumentProcessingResourceWithRawResponse,
+    ExternalDocumentProcessingResourceWithStreamingResponse,
+    AsyncExternalDocumentProcessingResourceWithStreamingResponse,
+)
 
 __all__ = [
     "EnrichmentsResource",
@@ -16,4 +24,10 @@ __all__ = [
     "AsyncEnrichmentsResourceWithRawResponse",
     "EnrichmentsResourceWithStreamingResponse",
     "AsyncEnrichmentsResourceWithStreamingResponse",
+    "ExternalDocumentProcessingResource",
+    "AsyncExternalDocumentProcessingResource",
+    "ExternalDocumentProcessingResourceWithRawResponse",
+    "AsyncExternalDocumentProcessingResourceWithRawResponse",
+    "ExternalDocumentProcessingResourceWithStreamingResponse",
+    "AsyncExternalDocumentProcessingResourceWithStreamingResponse",
 ]
