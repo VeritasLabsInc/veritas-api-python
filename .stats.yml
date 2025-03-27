@@ -1,2 +1,4 @@
 configured_endpoints: 5
 openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/veritas%2Fveritas-api-cf6a1bb964a53201bea4950825807dcd1c3720e41c4d2eef995ae04749edbe16.yml
+openapi_spec_hash: 30fec5860326eeed9eb6e8dc94afbfda
+config_hash: 102eb0bfe1502f8d477aa229329d4306
