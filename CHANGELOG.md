@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.2.0 (2025-03-27)
+
+Full Changelog: [v0.1.0...v0.2.0](https://github.com/VeritasLabsInc/veritas-api-python/compare/v0.1.0...v0.2.0)
+
+### Features
+
+* **api:** manual updates ([#10](https://github.com/VeritasLabsInc/veritas-api-python/issues/10)) ([2be9090](https://github.com/VeritasLabsInc/veritas-api-python/commit/2be909076799043280d3c91cf9031890dcdaf0e9))
+
+
+### Chores
+
+* fix typos ([#12](https://github.com/VeritasLabsInc/veritas-api-python/issues/12)) ([45e6fd1](https://github.com/VeritasLabsInc/veritas-api-python/commit/45e6fd1ad8afb99df24857792d9d433197931d35))
+
 ## 0.1.0 (2025-03-19)
 
 Full Changelog: [v0.0.1-alpha.1...v0.1.0](https://github.com/VeritasLabsInc/veritas-api-python/compare/v0.0.1-alpha.1...v0.1.0)
