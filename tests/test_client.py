@@ -762,8 +762,8 @@ class TestVeritasAPI:
                                 },
                                 {
                                     "name": "Miles Tone",
-                                    "phone": "123456790",
                                     "email": "miles@tone.com",
+                                    "phone": "phone",
                                     "role": "rn",
                                 },
                             ]
@@ -800,8 +800,8 @@ class TestVeritasAPI:
                                 },
                                 {
                                     "name": "Miles Tone",
-                                    "phone": "123456790",
                                     "email": "miles@tone.com",
+                                    "phone": "phone",
                                     "role": "rn",
                                 },
                             ]
@@ -1606,8 +1606,8 @@ class TestAsyncVeritasAPI:
                                 },
                                 {
                                     "name": "Miles Tone",
-                                    "phone": "123456790",
                                     "email": "miles@tone.com",
+                                    "phone": "phone",
                                     "role": "rn",
                                 },
                             ]
@@ -1644,8 +1644,8 @@ class TestAsyncVeritasAPI:
                                 },
                                 {
                                     "name": "Miles Tone",
-                                    "phone": "123456790",
                                     "email": "miles@tone.com",
+                                    "phone": "phone",
                                     "role": "rn",
                                 },
                             ]
