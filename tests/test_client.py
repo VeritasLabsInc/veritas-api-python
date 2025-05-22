@@ -762,8 +762,8 @@ class TestVeritasAPI:
                                 },
                                 {
                                     "name": "Miles Tone",
-                                    "phone": "123456790",
                                     "email": "miles@tone.com",
+                                    "phone": "phone",
                                     "role": "rn",
                                 },
                             ]
@@ -800,8 +800,8 @@ class TestVeritasAPI:
                                 },
                                 {
                                     "name": "Miles Tone",
-                                    "phone": "123456790",
                                     "email": "miles@tone.com",
+                                    "phone": "phone",
                                     "role": "rn",
                                 },
                             ]
@@ -1606,8 +1606,8 @@ class TestAsyncVeritasAPI:
                                 },
                                 {
                                     "name": "Miles Tone",
-                                    "phone": "123456790",
                                     "email": "miles@tone.com",
+                                    "phone": "phone",
                                     "role": "rn",
                                 },
                             ]
@@ -1644,8 +1644,8 @@ class TestAsyncVeritasAPI:
                                 },
                                 {
                                     "name": "Miles Tone",
-                                    "phone": "123456790",
                                     "email": "miles@tone.com",
+                                    "phone": "phone",
                                     "role": "rn",
                                 },
                             ]
@@ -1755,7 +1755,7 @@ class TestAsyncVeritasAPI:
         import threading
 
         from veritas_api._utils import asyncify
-        from veritas_api._base_client import get_platform 
+        from veritas_api._base_client import get_platform
 
         async def test_main() -> None:
             result = await asyncify(get_platform)()

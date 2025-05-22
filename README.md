@@ -45,8 +45,8 @@ response = client.enrichments.create_bulk(
         },
         {
             "name": "Miles Tone",
-            "phone": "123456790",
             "email": "miles@tone.com",
+            "phone": "phone",
             "role": "rn",
         },
     ],
@@ -88,8 +88,8 @@ async def main() -> None:
             },
             {
                 "name": "Miles Tone",
-                "phone": "123456790",
                 "email": "miles@tone.com",
+                "phone": "phone",
                 "role": "rn",
             },
         ],
@@ -139,8 +139,8 @@ try:
             },
             {
                 "name": "Miles Tone",
-                "phone": "123456790",
                 "email": "miles@tone.com",
+                "phone": "phone",
                 "role": "rn",
             },
         ],
@@ -199,8 +199,8 @@ client.with_options(max_retries=5).enrichments.create_bulk(
         },
         {
             "name": "Miles Tone",
-            "phone": "123456790",
             "email": "miles@tone.com",
+            "phone": "phone",
             "role": "rn",
         },
     ],
@@ -239,8 +239,8 @@ client.with_options(timeout=5.0).enrichments.create_bulk(
         },
         {
             "name": "Miles Tone",
-            "phone": "123456790",
             "email": "miles@tone.com",
+            "phone": "phone",
             "role": "rn",
         },
     ],
@@ -294,8 +294,8 @@ response = client.enrichments.with_raw_response.create_bulk(
         "email": "jane@doe.com",
     }, {
         "name": "Miles Tone",
-        "phone": "123456790",
         "email": "miles@tone.com",
+        "phone": "phone",
         "role": "rn",
     }],
 )
@@ -328,8 +328,8 @@ with client.enrichments.with_streaming_response.create_bulk(
         },
         {
             "name": "Miles Tone",
-            "phone": "123456790",
             "email": "miles@tone.com",
+            "phone": "phone",
             "role": "rn",
         },
     ],
